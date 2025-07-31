@@ -1,45 +1,20 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-        // int ans=0;
-        // for(int i = 0 ; i<nums.length;i++){
-        //     int ele = nums[i];
-        //     ele = Math.abs(ele);
-        //     if(nums[ele] >0){
-        //         nums[ele] = -nums[ele];
+        HashMap<Integer , Integer> hm = new HashMap<>();
+        for(int i = 0 ; i < nums.length  ; i ++){
+            if(hm.containsKey(nums[i])){
+                hm.put(nums[i], hm.get(nums[i])+1);
 
-        //     }else {
-        //         ans= ele ;
-        //         break ;
-        //     }
-        // }
-        // for(int i = 0 ; i <nums.length; i++){
-        //     nums[i]= Math.abs(nums[i]);
-        // }
-        // return ans ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Arrays.sort(nums);
-        int ans = 0;
-        for(int i = 0 ; i< nums.length ; i++){
-            if(nums[i] == nums[i+1]){
-                ans = nums[i];
-                return ans ;
+            }
+            else {
+                hm.put(nums[i],1);
             }
         }
-        return ans;
-
+        for(int key : hm.keySet()){
+            if(hm.get(key)>1){
+                return key;
+            }
+        }
+        return -1;
     }
 }
