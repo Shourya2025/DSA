@@ -1,30 +1,24 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-    // This is not apporiate approach
-    //   int[] arr = new int[nums.length];
-    //   for(int i = 0 , j=0; i< nums.length ;i++ ){
-    //     if(nums[i] !=0){
-    //         arr[j] = nums[i];
-    //         j++;
-    //     }
-    //   }
-    //    for(int i = 0 ; i< nums.length ;i++ ){
-    //     nums[i] = arr[i];
-    //    }
-    //Optimal approach is coppying non zero values only and all will automatically reach at the end
-    int j = 0;
-     for(int i = 0; i< nums.length ;i++ ){
-        if(nums[i] !=0){
-            nums[j]= nums[i];
-            j++;
-          
+       int z =0 ;
+        // int j = 0;
+        int[] ans = new int[nums.length]; 
+        for(int i =0 ; i < nums.length ; i++){
+            if(nums[i]!= 0){
+                ans[z++]= nums[i];
+            }
         }
-      }
-      while(j < nums.length ){
-        nums[j] =0 ;
-        j++;
-      }
+        int s =0;
+        while( s < ans.length  ){
+            nums[s] = ans[s];
+            s++;
 
-      
+
+        }
+        while(s< nums.length){ 
+            nums[s++] = 0; 
+
+        }
+
     }
-}
+}// n+n+n =3n ada complexity no avoid O(n)
