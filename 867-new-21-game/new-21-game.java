@@ -21,3 +21,4 @@ class Solution {
         return result;
     }
 }
+/// mc khud se nashi bana hai
