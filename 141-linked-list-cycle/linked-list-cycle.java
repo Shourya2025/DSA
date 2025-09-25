@@ -11,19 +11,25 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        //slow and fast pointer approach
+        ListNode slow = head;
+        ListNode fast = head;
+        ListNode ptr  = head;
         if(head == null || head.next == null){
             return false ;
         }
-        ListNode slow = head ;
-        ListNode fast = head ;
-        while(fast!= null && fast.next!= null ){
-            fast = fast.next.next ;
+        while(fast != null && fast.next != null){
             slow = slow.next;
-            if(fast == slow){
-                return true ;
+            fast = fast.next.next;
+            if(fast == null){
+                return false;
             }
+            if(fast == slow){
+                return true;
+            }
+            
+
+            ptr = ptr.next;
         }
-        return false;
+        return false ;
     }
 }
