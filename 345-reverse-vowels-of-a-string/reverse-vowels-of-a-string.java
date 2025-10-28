@@ -1,31 +1,32 @@
 class Solution {
     public String reverseVowels(String s) {
-        StringBuilder sm = new StringBuilder(s);
+        StringBuilder sb = new StringBuilder(s);
         int start = 0 ;
-        int end = s.length() -1;
-        while(start < end){
-            char chs = sm.charAt(start);
-            char che = sm.charAt(end);
-             if(chs == 'a' || chs == 'e' || chs == 'i' || chs == 'o' || chs == 'u' || chs == 'A' || chs == 'E' || chs == 'I' ||chs == 'O' || chs == 'U' ){
+        int end = s.length()-1;
+        while(start<end){
+            char chs = sb.charAt(start);
+            char che = sb.charAt(end);
+            if(chs == 'a' || chs == 'e' || chs == 'i' || chs == 'o' || chs == 'u' || chs == 'A' || chs == 'E' || chs == 'I' ||chs == 'O' || chs == 'U' ){
                 if(che == 'a' || che == 'e' || che == 'i' || che == 'o' || che == 'u' || che == 'A' || che == 'E' || che == 'I' ||che == 'O' || che == 'U' ){
-                    swap(sm , start , end);
-                    start ++;
-                    end --;
+                    swap(sb , start , end);
+                    start++;
+                    end--;
+
                 }else{
-                    end --;
+                    end--;
                 }
 
-        }
-        else {
-            start++;
-        }
-    }
-    return sm.toString(); 
+            }else{
+                start++;
+            }
 
+
+        }
+        return sb.toString();
     }
-    public void swap(StringBuilder sm  , int first , int second){
-        char temp = sm.charAt(first);
-        sm.setCharAt(first ,sm.charAt(second));
-        sm.setCharAt(second ,temp);
+     public void swap(StringBuilder sb , int start , int end){
+       char temp = sb.charAt(start);
+        sb.setCharAt(start, sb.charAt(end));
+        sb.setCharAt(end, temp);
     }
 }
