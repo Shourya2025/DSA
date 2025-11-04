@@ -12,5 +12,16 @@ class Solution {
             l++;
         }
         return r;
+
+
+
+
+        // while(l<n  && r<m){
+        //     if(s[r] >= g[l]){
+        //         r++;
+        //     }
+        //     l++;
+        // }
+        // return r;
     }
 }
