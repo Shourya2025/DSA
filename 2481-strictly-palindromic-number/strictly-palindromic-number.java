@@ -1,21 +1,22 @@
 class Solution {
     public boolean isStrictlyPalindromic(int n) {
 
-        int no = 2;
+        // int no = 2;
 
-        while (no <= n - 2) {
+        // while (no <= n - 2) {
 
-            String s = Integer.toString(n, no);
+        //     String s = Integer.toString(n, no);
 
-            StringBuilder sb = new StringBuilder(s);
+        //     StringBuilder sb = new StringBuilder(s);
 
-            if (!s.equals(sb.reverse().toString())) {
-                return false;
-            }
+        //     if (!s.equals(sb.reverse().toString())) {
+        //         return false;
+        //     }
 
-            no++;
-        }
+        //     no++;
+        // }
 
-        return true;
+        // return true;
+        return false ;
     }
 }
