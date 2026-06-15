@@ -35,18 +35,34 @@ class Solution {
     //     }
     // }
 
-   if(head.next == null){
-    return null;
-   }
-   ListNode fast = head;
-   ListNode slow = head;ListNode pre = slow;
-   while(fast != null&&fast.next != null){
-    fast = fast.next.next;
-    pre = slow;
-    slow = slow.next;
-   }
-   pre.next = pre.next.next;
-   return head;
+//    if(head.next == null){
+//     return null;
+//    }
+//    ListNode fast = head;
+//    ListNode slow = head;ListNode pre = slow;
+//    while(fast != null&&fast.next != null){
+//     fast = fast.next.next;
+//     pre = slow;
+//     slow = slow.next;
+//    }
+//    pre.next = pre.next.next;
+//    return head;
+
+
+
+
+    if(head.next == null) return null;
+    ListNode fast = head;
+    ListNode slow = head ;
+    ListNode pre =  slow;
+    while(fast != null && fast.next!= null){
+        fast = fast.next.next;
+        pre = slow;
+        slow = slow.next;
+
+    }
+    pre.next = pre.next.next;
+    return head;
 
     }
 
